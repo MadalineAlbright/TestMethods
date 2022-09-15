@@ -1,0 +1,6 @@
+server:
+  port: 8089
+
+sms:
+#   message: maddie
+  message: ${SMS_TEMPLATE:[firstName] [lastName] has sent}
