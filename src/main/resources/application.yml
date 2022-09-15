@@ -1,6 +1,24 @@
 server:
   port: 8089
 
-sms:
+#sms:
 #   message: maddie
-  message: ${SMS_TEMPLATE:[firstName] [lastName] has sent}
+#  message: ${SMS_TEMPLATE:[firstName] [lastName] has sent}
+
+spring:
+  activemq:
+    broker-url: amqp://localhost:5672
+    user: admin
+    password: admin
+    packages:
+      trust-all: true
+    pool:
+      enabled: true
+      max-connections: 10
+      idle-timeout: 60
+      max-sessions-per-connection: 500
+      block-if-full: false
+      time-between-expiration-check: 100
+b2c:
+  amq-callback-queue-name: KCB.CALLBACK.QUEUE
+  amq-receive-timeout: 30

@@ -21,7 +21,7 @@ public class CustomProperties {
     private int httpConnectionReadTimeout;
     private String commandId;
     private String amqFundsTransferQueueName;
-    private String amqThirdPartyQueueName;
+    private String amqCallbackQueueName;
 
     //THIRD PARTY CONFIGS **
     private String thirdPartySafaricomApiHost;
