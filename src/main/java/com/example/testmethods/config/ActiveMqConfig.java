@@ -34,17 +34,6 @@ public class ActiveMqConfig {
 	        connectionFactory.setPassword(BROKER_PASSWORD);
 	    return connectionFactory;
 	}
-
-    /*
-	@Bean
-	public ActiveMQConnectionFactory activeMQConnectionFactory1() {
-		ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory();
-		activeMQConnectionFactory.setBrokerURL(BROKER_URL);
-		activeMQConnectionFactory.setPassword(BROKER_PASSWORD);
-		activeMQConnectionFactory.setUserName(BROKER_USERNAME);
-		return activeMQConnectionFactory;
-	}*/
-
     @Bean
     public JmsListenerContainerFactory<?> queueListenerFactory() {
         DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
@@ -56,7 +45,6 @@ public class ActiveMqConfig {
     public DefaultJmsListenerContainerFactory myJmsListenerContainerFactory() {
       DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
       factory.setConnectionFactory(connectionFactoryAMQP());
-      //factory.setDestinationResolver(destinationResolver());
       factory.setMessageConverter(messageConverter());
       factory.setSessionTransacted(true);
       factory.setConcurrency("5");
@@ -67,7 +55,6 @@ public class ActiveMqConfig {
     public MessageConverter messageConverter() {
         MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
         converter.setTargetType(MessageType.TEXT);
-        //converter.setTargetType(MessageType.BYTES);
         converter.setTypeIdPropertyName("_type");
         return converter;
     }

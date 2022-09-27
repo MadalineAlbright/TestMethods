@@ -29,8 +29,8 @@ public class UserCallBackReceiver {
         header.setStatusDescription("SUCCESS");
 
         testUser.setHeader(header);
-        testUser.setBlog(user.getBlog());
-        testUser.setName(user.getName());
+//        testUser.setBlog(user.getBlog());
+//        testUser.setName(user.getName());
         log.info("===========CALLBACK LOGGED RESPONSE ==========={}",testUser);
         queue.sendResponseToQueue(String.valueOf(testUser));
         return ResponseEntity.ok(testUser);

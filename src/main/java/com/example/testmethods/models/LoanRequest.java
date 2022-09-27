@@ -1,7 +1,10 @@
 package com.example.testmethods.models;
 
+import lombok.Data;
+
+@Data
 public class LoanRequest {
 
-    private Long Id;
+    private Long id;
     private double amount;
 }

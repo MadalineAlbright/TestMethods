@@ -37,11 +37,8 @@ public class ConvertDateTimeToJulianDateTime {
         try{
             java.text.DateFormat fmt1 = new java.text.SimpleDateFormat("yyyyDDD");
             Date date = fmt1.parse(input);
-//            java.text.DateFormat fmt2 = new java.text.SimpleDateFormat("dd-MMM-yyyy");
             java.text.DateFormat fmt2 = new java.text.SimpleDateFormat("E, MMM dd yyyy");
-//            java.text.DateFormat fmt2 = new java.text.SimpleDateFormat("MMM/dd/yyyy");
 
-            //Output = fmt2.format(date);
             System.out.println(fmt2.format(date));
         }
         catch(java.text.ParseException e){

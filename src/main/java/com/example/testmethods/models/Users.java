@@ -4,8 +4,11 @@ import lombok.Data;
 import lombok.ToString;
 
 @Data
-@ToString
 public class Users {
     private String name;
     private String blog;
+    private Department department;
+
+    public Users(String fghh, String lokesh) {
+    }
 }
